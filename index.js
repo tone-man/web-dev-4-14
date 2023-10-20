@@ -35,7 +35,7 @@ function searchUser(target) {
     return usersFound;
 }
 
-// Function for for the search button
+// Function for the search button
 function searchRequest() {
     const searchInput = document.getElementById("search-name").value;
     const foundUsers = searchUser(searchInput);
@@ -45,6 +45,13 @@ function searchRequest() {
     } else {
         document.getElementById("users-output").innerHTML = "User not found.";
     }
+}
+
+
+// Function for the clear users betton
+function clearUsersRequest() {
+    users = [];
+    clearOutputRequest();
 }
 
 // Say Something function
@@ -58,13 +65,18 @@ function callIt(callbackFn, number) {
     }
 }
 
-//Function for the saySomething button
+// Function for the saySomething button
 function saySomethingRequest() {
     let something = document.getElementById("something-text").value;
     let number = parseInt(document.getElementById("call-count").value);
     callIt(() => {
         saySomething(something)
     }, number);
+}
+
+// Function for the clear button
+function clearOutputRequest(){
+    document.getElementById("users-output").innerHTML = "";
 }
 
 

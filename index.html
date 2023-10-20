@@ -6,12 +6,22 @@
     <title>Practice 4.14</title>
 </head>
 <body>
-    <button onClick="createUser()">Create User</button>
-    <input type="text" id="search-name">
-    <button onclick="searchRequest()">Search</button>
-    <input type="text" id="something-text">
-    <input type="text" id="call-count">
-    <button onclick="saySomethingRequest()">Call It</button>
+    <form onsubmit="return false">
+        <button onClick="createUser()">Create User</button><br>
+        <label for="search-name">Search by User:</label><br>
+        <input type="text" id="search-name"><br>
+        <button type="button" onclick="searchRequest()">Search</button><br>
+        <button onclick="clearUsersRequest()">Clear Users</button>
+    </form>
+
+    <form onsubmit="return false">
+        <label for="something-text">Say Something:</label><br>
+        <input type="text" id="something-text"><br>
+        <label for="something-text">How many times would you like to say it:</label><br>
+        <input type="number" min="1" id="call-count"><br>
+        <button onclick="saySomethingRequest()">Generate</button>
+        <button onclick="clearOutputRequest()">Clear Output</button>
+    </form>
     <div id="users-output"></div>
 </body>
 <script src="index.js"></script>
